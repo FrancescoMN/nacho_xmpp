@@ -11,6 +11,10 @@ from typing import Any, Callable, Optional
 from .tor_manager import TorManager, TorRuntime
 
 
+ONION_DOMAIN = "24nzlv4njhn5bpxuqjnn7jqvjfvpmbc6oijq72z3p4kzwd7n6gpn4eid.onion"
+ONION_PORT = "5222"
+
+
 class SessionBridge:
     """Bidirectional JSON-over-stdio bridge to the XMPP worker."""
 
@@ -128,17 +132,9 @@ class MainWindow:
         top = ttk.Frame(self.root, padding=10)
         top.pack(fill=tk.X)
 
-        ttk.Label(top, text="Domain").grid(row=0, column=0, sticky=tk.W)
-        self.domain_var = tk.StringVar(value="24nzlv4njhn5bpxuqjnn7jqvjfvpmbc6oijq72z3p4kzwd7n6gpn4eid.onion")
-        ttk.Entry(top, textvariable=self.domain_var, width=64).grid(row=0, column=1, sticky=tk.W, padx=6)
-
-        ttk.Label(top, text="Host").grid(row=0, column=2, sticky=tk.W)
-        self.host_var = tk.StringVar(value=self.domain_var.get())
-        ttk.Entry(top, textvariable=self.host_var, width=64).grid(row=0, column=3, sticky=tk.W, padx=6)
-
-        ttk.Label(top, text="Port").grid(row=0, column=4, sticky=tk.W)
-        self.port_var = tk.StringVar(value="5222")
-        ttk.Entry(top, textvariable=self.port_var, width=8).grid(row=0, column=5, sticky=tk.W)
+        self.domain_var = tk.StringVar(value=ONION_DOMAIN)
+        self.host_var = tk.StringVar(value=ONION_DOMAIN)
+        self.port_var = tk.StringVar(value=ONION_PORT)
 
         ttk.Label(top, text="Username").grid(row=1, column=0, sticky=tk.W, pady=(8, 0))
         self.username_var = tk.StringVar()
