@@ -18,6 +18,7 @@ Features:
 ## Requirements
 
 - `python3`
+- `tkinter` (`python3-tk` package on Debian/Ubuntu)
 - `tor`
 - `torsocks`
 - Python packages from `requirements.txt`
@@ -25,6 +26,9 @@ Features:
 ## Install dependencies
 
 ```bash
+sudo apt-get update
+sudo apt-get install -y python3-tk tor torsocks
+
 cd /home/francesco/prosody-onion-secure/torchat_client
 python3 -m pip install -r requirements.txt
 ```
@@ -43,4 +47,3 @@ python3 -m app.main
 3. Connect with the same credentials.
 4. Set `Peer JID` and send messages.
 5. Click `Send File` to upload file over XMPP HTTP Upload and send link.
-
