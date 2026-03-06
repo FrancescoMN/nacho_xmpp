@@ -44,8 +44,3 @@ python3 -m app.main
 4. Set `Peer JID` and send messages.
 5. Click `Send File` to upload file over XMPP HTTP Upload and send link.
 
-## Notes
-
-- Prosody must have registration enabled if you use in-app registration.
-- Prosody must have `mod_http_file_share`/XEP-0363 enabled for file sending.
-- For strict E2EE, add OMEMO support in a future phase.
