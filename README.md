@@ -29,7 +29,7 @@ Features:
 sudo apt-get update
 sudo apt-get install -y python3-tk tor torsocks
 
-cd /home/francesco/prosody-onion-secure/torchat_client
+cd /home/your_username/prosody-onion-secure/torchat_client
 python3 -m pip install -r requirements.txt
 ```
 
